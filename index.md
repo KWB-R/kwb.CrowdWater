@@ -5,8 +5,6 @@
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/kwb.CrowdWater)]()
 [![R-Universe_Status_Badge](https://kwb-r.r-universe.dev/badges/kwb.CrowdWater)](https://kwb-r.r-universe.dev/)
 
-# kwb.CrowdWater
-
 This package uses observations data of lakes collected by the
 CrowdWater App to derive semi-quantitative indictors for nutrients
 (trophic sate), biotop value, use of the lakes and water availability
@@ -31,9 +29,3 @@ if (! require("remotes")) {
 # Install KWB package 'kwb.CrowdWater' from GitHub
 remotes::install_github("KWB-R/kwb.CrowdWater")
 ```
-
-## Documentation
-
-Release: [https://kwb-r.github.io/kwb.crowdwater](https://kwb-r.github.io/kwb.crowdwater)
-
-Development: [https://kwb-r.github.io/kwb.crowdwater/dev](https://kwb-r.github.io/kwb.crowdwater/dev)

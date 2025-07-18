@@ -1,0 +1,20 @@
+Package: kwb.CrowdWater
+Title: Lake Indicators from CrowdWater Observations
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Malte", "Zamzow", , "malte.zamzow@kompetenz-wasser.de", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-8748-038X")),
+    person("Kompetenzzentrum Wasser Berlin gGmbH (KWB)", role = "cph")
+  )
+Description: This package uses observations data of lakes collected by the
+    CrowdWater App to derive semi-quantitative indictors for nutrients
+    (trophic sate), biotop value, use of the lakes and water availability
+    characteristics.
+License: MIT + file LICENSE
+URL: https://github.com/KWB-R/kwb.CrowdWater
+BugReports: https://github.com/KWB-R/kwb.CrowdWater/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests: 
+    covr
