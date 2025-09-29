@@ -6,7 +6,7 @@
 #' "biotope", "usage" or "waterstress"
 #' 
 #' @return
-#' A data frame of 5 columns (ROOT_ID, LATTITUDE, LONGITUDE and the indicator 
+#' A data frame of 5 columns (ROOT_ID, LATITUDE, LONGITUDE and the indicator 
 #' value and the number of observations)
 #' 
 #' @importFrom "stats" "aggregate"
@@ -17,22 +17,23 @@ lake_indicator <- function(df_cw, indicator_type){
     df_cw$waterstress <- indicator_waterStress(df_cw = df_cw)
     site_list <- split(x = df_cw, f = df_cw$ROOT_ID)
     
-    df_agg <- as.data.frame(t(sapply(site_list, function(x){
+    site_list_data <- lapply(site_list, function(x){
       newest_on_top <- x[order(x$SPOTTED_AT, decreasing = TRUE),]
       v <- newest_on_top$waterstress[!is.na(newest_on_top$waterstress)]
       
       df_out <- data.frame(
         "ROOT_ID" = x$ROOT_ID[1],
-        "LATTITUDE" = x$LATITUDE[1],
+        "LATITUDE" = x$LATITUDE[1],
         "LONGITUDE" = x$LONGITUDE[1],
         "type" = indicator_type,
         "indicator" =  sum(v, na.rm = TRUE),
-        "n" = sum(!is.na(v)))#
-      if(df_out$n == 0L){
+        "n" = sum(!is.na(v)))
+      if(df_out$n == 0L){ 
         df_out$indicator <- NA
       }
       df_out
-    })))
+    })
+    df_agg <- do.call(rbind, site_list_data)
     
   } else {
     v <- if(indicator_type == "nutrients"){
@@ -46,7 +47,7 @@ lake_indicator <- function(df_cw, indicator_type){
       x = v, 
       by = list(
         "ROOT_ID" = df_cw$ROOT_ID, 
-        "LATTITUDE" = df_cw$LATITUDE, 
+        "LATITUDE" = df_cw$LATITUDE, 
         "LONGITUDE" = df_cw$LONGITUDE
       ), 
       FUN = function(x){

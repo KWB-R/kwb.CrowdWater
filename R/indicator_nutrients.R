@@ -43,14 +43,16 @@ indicator_nutrients <- function(
     df = df_cw, 
     property = "FLOATING_LEAVE_PLANTS", 
     categories = c("Yes"), 
-    points = c(1)
+    points = c(1),
+    NA_answer = NULL
   )
   
   p5 <- assign_points_SC(
     df = df_cw, 
     property = "LAKE_PLANTS_UNDERWATER", 
     categories = c("Yes"), 
-    points = c(1)
+    points = c(1),
+    NA_answer = NULL
   )
   
   p6 <- assign_points_SC(

@@ -17,4 +17,10 @@
 #' 
 "props_and_cats"
 
+#' Simple feature of the Berlin district boundaries
+#' 
+#' @format Besides the geometry, the Name of the district and its ID is given
+#' 
+"berlin_district_shp"
+
 

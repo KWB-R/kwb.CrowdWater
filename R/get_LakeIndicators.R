@@ -19,7 +19,7 @@ get_LakeIndicators <- function(df_cw){
     x = df_cw$SPOTTED_AT, 
     by = list(
       "ROOT_ID" = df_cw$ROOT_ID, 
-      "LATTITUDE" = df_cw$LATITUDE, 
+      "LATITUDE" = df_cw$LATITUDE, 
       "LONGITUDE" = df_cw$LONGITUDE
     ), 
     FUN = max, 
@@ -45,7 +45,7 @@ merge_LakeIndicators <- function(x, y){
   yName <- paste0("_", y$type[1])
   # x2 <- subset(x = x, select = -type)
   # y2 <- subset(x = y, select = -type)
-  merge(x = x, y = y, by = c("ROOT_ID", "LATTITUDE", "LONGITUDE"), all = TRUE, 
+  merge(x = x, y = y, by = c("ROOT_ID", "LATITUDE", "LONGITUDE"), all = TRUE, 
         suffixes = c(xName, yName))
 }
 

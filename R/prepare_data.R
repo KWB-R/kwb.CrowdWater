@@ -48,7 +48,7 @@ prepare_data <- function(
   
   lake_cols <- c(
     "ID", "ROOT_ID", "LATITUDE", "LONGITUDE", "CREATED_AT", "MODIFIED_AT", 
-    "SPOTTED_AT", "DESCRIPTION", "CATEGORY","PHYSICAL_SCALE_UNIT", 
+    "SPOTTED_AT", "DESCRIPTION", "IMAGE", "CATEGORY","PHYSICAL_SCALE_UNIT", 
     "PHYSICAL_SCALE_LEVEL", names(props_and_cats))
   
  if(any(!(lake_cols %in% colnames(df)))){

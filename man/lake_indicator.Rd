@@ -14,7 +14,7 @@ lake_indicator(df_cw, indicator_type)
 "biotope", "usage" or "waterstress"}
 }
 \value{
-A data frame of 5 columns (ROOT_ID, LATTITUDE, LONGITUDE and the indicator
+A data frame of 5 columns (ROOT_ID, LATITUDE, LONGITUDE and the indicator
 value and the number of observations)
 }
 \description{
